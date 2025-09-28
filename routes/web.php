@@ -10,6 +10,8 @@ Route::get('/home', function () {
     echo "<p>GUNCANG PERTANIAN, REBUT EKONOMI EKSKLUSIF</p>";
 });
 
+Route::prefix('/homepage')->group(function () {
+
 Route::get('/about', function () {
     echo "<h1>About Gree</h1>";
     echo "<p>Gree adalah Platform koperasi digital pertanian berbasis web app, 
@@ -38,28 +40,16 @@ Route::get('/team', function () {
             <li><strong>Dalila Tazkia</strong> as Hipster</li>
           </ul>";
 });
+});
 
-Route::get('/contact', function () {
-    echo "<h1>Contact Us</h1>";
+Route::get('/kontak/{name}', function ($name) {
+    echo "<h1>Contact Us $name</h1>";
     echo "<p>Email: greebersama@gree.com</p>";
     echo "<p>Phone: +6285925285385</p>";
 });
 
-Route::get('/program/{name}', function ($name) {
-    echo "<h1>Detail Program: " . ucfirst($name) . "</h1>";
-});
-
-Route::prefix('admin')->group(function () {
-    Route::get('/dashboard', function () {
-        echo "<h1>Admin Dashboard</h1>";
-    });
-    Route::get('/users', function () {
-        echo "<h1>Manage Users</h1>";
-    });
-});
-
-Route::redirect('/aboutus', '/about');
+Route::redirect('/homepage/aboutus', '/homepage/about');
 
 Route::fallback(function () {
-    echo "<h1>404 - Page Not Found</h1>";
+    return"Maaf, Server error";
 });
