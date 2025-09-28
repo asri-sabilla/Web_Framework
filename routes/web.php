@@ -15,7 +15,7 @@ Route::prefix('/homepage')->group(function () {
 Route::get('/about', function () {
     echo "<h1>About Gree</h1>";
     echo "<p>Gree adalah Platform koperasi digital pertanian berbasis web app, 
-        sebagai ekosistem digital yang menghubungkan petani, koperasi, 
+        ekosistem digital yang menghubungkan petani, koperasi, 
         distributor, dan konsumen pasar dalam satu sistem. 
         Melalui digitalisasi, koperasi tradisional yang kurang optimal dapat dihidupkan 
         kembali secara lebih modern, membuka akses yang lebih luas serta membuat 
