@@ -49,7 +49,6 @@ Route::get('/program/{name}', function ($name) {
     echo "<h1>Detail Program: " . ucfirst($name) . "</h1>";
 });
 
-// Group contoh
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard', function () {
         echo "<h1>Admin Dashboard</h1>";
@@ -59,10 +58,8 @@ Route::prefix('admin')->group(function () {
     });
 });
 
-// Redirect contoh
 Route::redirect('/aboutus', '/about');
 
-// Fallback
 Route::fallback(function () {
     echo "<h1>404 - Page Not Found</h1>";
 });
